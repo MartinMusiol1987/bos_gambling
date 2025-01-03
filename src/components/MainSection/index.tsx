@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Content from './Content';
-import CallToAction from './CallToAction';
+import Dropdowns from './Dropdowns';
 
 export default function MainSection() {
   return (
@@ -22,8 +22,15 @@ export default function MainSection() {
     >
       <div className="max-w-7xl mx-auto px-5 py-12 md:py-24">
         <Header />
+        <div className="mb-16">
+          <img
+            src="https://images.unsplash.com/photo-1606167668584-78701c57f13d?q=80&w=2940"
+            alt="Casino Roulette Wheel"
+            className="w-full h-[400px] object-cover rounded-lg"
+          />
+        </div>
         <Content />
-        <CallToAction />
+        <Dropdowns />
       </div>
     </section>
   );

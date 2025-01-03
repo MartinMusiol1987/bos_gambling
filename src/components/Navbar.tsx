@@ -39,20 +39,15 @@ export default function Navbar() {
             <img src={logoWhite} alt="Story Bank Logo" className="h-[40px] w-auto" />
           </a>
         </div>
-        <div className="flex-shrink-0 flex gap-4 items-center">
+        <div className="flex-shrink-0">
           <a
             style={buttonStyles}
-            href="/app"
-            title="Get Started Now"
+            href="https://calendly.com/generativeai-net/everyone-can-code-1-on-1-with-martin-musiol"
+            title="Schedule a Call"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Get Started Now
-          </a>
-          <a
-            className="block text-white font-medium hover:bg-white hover:text-orange-400 px-6 py-3 rounded-full border-2 border-white transition-all"
-            href="/app"
-            title="Log in"
-          >
-            Log in
+            Schedule a Call
           </a>
         </div>
       </div>
