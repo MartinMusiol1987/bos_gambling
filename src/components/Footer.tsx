@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="py-6 md:py-12">
           <div className="font-light text-xl">
-            XM Coach Ltd. is a company registered in England and Wales (company no. 14293144) 85 Great Portland street, First Floor, London, W1W 7LT
+            XM Coach Ltd. trading as RFOCD.com is a company registered in England and Wales (company no. 14293144) 85 Great Portland street, First Floor, London, W1W 7LT
           </div>
           <div className="font-light text-xl">
             Copyright © {new Date().getFullYear()}. XM Coach Ltd. All rights reserved.
