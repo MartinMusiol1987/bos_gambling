@@ -18,7 +18,7 @@ export default function Content() {
               style={{ fontFamily: "'DM Serif Text', serif" }}
             >
               "This is too important to leave to chance"
-              <cite className="block text-sm text-gray-600 not-italic mt-4 font-bold">
+              <cite className="block text-base text-gray-600 not-italic mt-4 font-bold">
                 - CX Lead major EU gaming business
               </cite>
             </blockquote>
