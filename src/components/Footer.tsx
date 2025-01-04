@@ -38,10 +38,10 @@ export default function Footer() {
             <div className="font-light text-xl">
               <a
                 className="flex items-center gap-2 underline"
-                href="mailto:help@storybank.com"
+                href="mailto:david.hicks@xmcoach.com"
                 title="Email"
               >
-                help@storybank.com <ArrowUpRight className="h-4 w-4" />
+                david.hicks@xmcoach.com <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -49,11 +49,10 @@ export default function Footer() {
 
         <div className="py-6 md:py-12">
           <div className="font-light text-xl">
-            Story Bank Ltd. is a company registered in England and Wales (company no. 14293144) 85
-            Great Portland street, First Floor, London, W1W 7LT
+            XM Coach Ltd. is a company registered in England and Wales (company no. 14293144) 85 Great Portland street, First Floor, London, W1W 7LT
           </div>
           <div className="font-light text-xl">
-            Copyright © {new Date().getFullYear()}. Story Bank Ltd. All rights reserved.
+            Copyright © {new Date().getFullYear()}. XM Coach Ltd. All rights reserved.
           </div>
         </div>
       </div>

@@ -27,10 +27,10 @@ export default function Content() {
       </div>
       <div className="md:col-span-2 flex justify-center mt-12">
         <div className="w-1/2">
-          <h3 className="text-2xl font-bold text-center mb-4">
+          <h3 className="text-2xl font-bold text-center mb-4 text-gray-700">
             Download Our Tailored Briefing Notes
           </h3>
-          <p className="text-[18px] text-center">
+          <p className="text-[18px] text-center text-gray-600">
             Download our tailored briefing notes today to learn how this collaborative venture can get you ahead of the curve, and keep you there.
           </p>
         </div>
