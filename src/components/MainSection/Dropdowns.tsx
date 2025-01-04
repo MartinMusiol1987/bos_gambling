@@ -27,6 +27,19 @@ const buttonStyles = {
   transitionDuration: '.15s'
 } as const;
 
+const downloadButtonStyles = {
+  display: 'inline-block',
+  padding: '0.75rem 1.5rem',
+  backgroundColor: '#ED6944',
+  color: 'white',
+  borderRadius: '9999px',
+  fontWeight: 500,
+  transition: 'all 0.2s ease',
+  cursor: 'pointer',
+  border: 'none',
+  boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
+} as const;
+
 export default function Dropdowns() {
   const [selectedMarket, setSelectedMarket] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
@@ -80,7 +93,8 @@ export default function Dropdowns() {
             href={getPdfPath()}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors"
+            style={downloadButtonStyles}
+            className="hover:bg-[#e85933] active:bg-[#d54e2a]"
           >
             Download PDF
           </a>
