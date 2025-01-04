@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import logoWhite from '../assets/images/logo-white.svg';
+import siteLogo from '../assets/images/site_logo.png';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5">
         <div className="flex flex-col gap-8 py-12 md:py-24">
           <div>
-            <img src={logoWhite} alt="Story Bank Logo" className="h-[40px] w-auto" />
+            <img src={siteLogo} alt="XM Coach Logo" className="h-[40px] w-auto" />
           </div>
           
           <div className="flex flex-col gap-3">

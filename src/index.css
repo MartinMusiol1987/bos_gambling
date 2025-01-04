@@ -5,3 +5,11 @@
 body {
   @apply bg-white;
 }
+
+@font-face {
+  font-family: 'DM Serif Text';
+  src: url('./assets/fonts/DMSerifText-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+}

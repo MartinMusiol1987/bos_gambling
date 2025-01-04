@@ -1,5 +1,5 @@
 import React from 'react';
-import logoWhite from '../assets/images/logo-white.svg';
+import siteLogo from '../assets/images/site_logo.png';
 
 const buttonStyles: React.CSSProperties = {
   WebkitTextSizeAdjust: '100%',
@@ -32,11 +32,11 @@ const buttonStyles: React.CSSProperties = {
 
 export default function Navbar() {
   return (
-    <nav className="bg-orange-400" role="navigation" aria-label="Main Navigation">
-      <div className="flex gap-5 md:gap-10 justify-between items-center max-w-7xl mx-auto px-5 py-5 md:py-10">
+    <nav className="sticky top-0 z-50 bg-orange-400 shadow-md">
+      <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
         <div className="py-2">
-          <a href="/" title="Story Bank">
-            <img src={logoWhite} alt="Story Bank Logo" className="h-[40px] w-auto" />
+          <a href="/" title="XM Coach">
+            <img src={siteLogo} alt="XM Coach Logo" className="h-[40px] w-auto" />
           </a>
         </div>
         <div className="flex-shrink-0">
