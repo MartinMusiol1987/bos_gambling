@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <a
             style={buttonStyles}
-            href="https://calendly.com/david-hicks/xm-coach-initial-discussion-clone"
+            href="https://calendly.com/david-hicks/delivery-logistics-after-party"
             title="Schedule a Call"
             target="_blank"
             rel="noopener noreferrer"
