@@ -55,35 +55,8 @@ const downloadButtonStyles: React.CSSProperties = {
   boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)'
 };
 
-const scheduleButtonStyles: React.CSSProperties = {
-  WebkitTextSizeAdjust: '100%',
-  fontFeatureSettings: 'normal',
-  fontVariationSettings: 'normal',
-  WebkitTapHighlightColor: 'transparent',
-  lineHeight: 'inherit',
-  WebkitFontSmoothing: 'antialiased',
-  boxSizing: 'border-box',
-  borderWidth: 0,
-  borderStyle: 'solid',
-  borderColor: '#d1d1d1',
-  textDecoration: 'inherit',
-  display: 'inline-block',
-  borderRadius: '9999px',
-  backgroundColor: 'rgb(51 51 51 / var(--tw-bg-opacity))',
-  paddingLeft: '1.5rem',
-  paddingRight: '1.5rem',
-  paddingTop: '.75rem',
-  paddingBottom: '.75rem',
-  fontWeight: 500,
-  color: 'rgb(255 255 255 / var(--tw-text-opacity))',
-  transitionProperty: 'all',
-  transitionTimingFunction: 'cubic-bezier(.4,0,.2,1)',
-  transitionDuration: '.15s',
-  '--tw-bg-opacity': '1',
-  '--tw-text-opacity': '1'
-} as React.CSSProperties;
-
-const pdfMap = {
+// PDF mapping for non-US market
+const rowPdfMap = {
   regulatory: '/assets/pdfs/regulatory-safer-gambling.pdf',
   operations: '/assets/pdfs/operations.pdf',
   cx: '/assets/pdfs/customer-experience.pdf'
@@ -94,7 +67,14 @@ export default function Dropdowns() {
   const [role, setRole] = useState('');
 
   const handleDownload = () => {
-    const pdfPath = pdfMap[role as keyof typeof pdfMap];
+    // For US market, always serve us-market.pdf regardless of role
+    if (market === 'us') {
+      window.open('/assets/pdfs/us-market.pdf', '_blank');
+      return;
+    }
+
+    // For other markets, use the role-specific PDF
+    const pdfPath = rowPdfMap[role as keyof typeof rowPdfMap];
     if (pdfPath) {
       window.open(pdfPath, '_blank');
     }
