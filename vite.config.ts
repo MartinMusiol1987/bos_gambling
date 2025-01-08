@@ -7,7 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/bos_gambling/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
