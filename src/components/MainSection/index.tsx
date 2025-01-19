@@ -16,13 +16,27 @@ export default function MainSection() {
             <Content />
           </div>
           
-          {/* Right column with image */}
-          <div className="flex justify-end mt-0">
+          {/* Right column with image and text */}
+          <div className="flex flex-col justify-end">
             <img
               src={mainImage}
               alt="Wallet connected to shield illustration representing safer gambling"
               className="w-[485px] object-contain"
             />
+            <h3 className="font-roboto text-[24px] font-bold leading-[32px] text-gray-700 mt-12"
+                style={{ 
+                  textUnderlinePosition: 'from-font',
+                  textDecorationSkipInk: 'none'
+                }}>
+              Download Our Tailored Briefing Notes
+            </h3>
+            <p className="font-roboto text-[16px] font-normal leading-[25px] text-[#4B5563] mt-6 w-[485px]"
+               style={{ 
+                 textUnderlinePosition: 'from-font',
+                 textDecorationSkipInk: 'none'
+               }}>
+              Download our tailored briefing notes today to learn how this collaborative venture can get you ahead of the curve, and keep you there.
+            </p>
           </div>
         </div>
 
