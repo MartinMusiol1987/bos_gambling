@@ -159,8 +159,9 @@ export default function Dropdowns() {
         <div className="mt-8 text-center">
           <p className="text-gray-700 mb-4">If you'd like to know more schedule a meeting</p>
           <a
-            className="inline-block px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors mt-4"
-            href="https://calendly.com/david-hicks/xm-coach-initial-discussion-clone"
+            className="inline-block px-6 py-3 bg-[rgb(51_51_51_/_var(--tw-bg-opacity))] text-white rounded-full hover:bg-gray-700 transition-colors mt-4"
+            style={{ '--tw-bg-opacity': '1' } as React.CSSProperties}
+            href="https://calendly.com/david-hicks/delivery-logistics-after-party"
             target="_blank"
             rel="noopener noreferrer"
           >

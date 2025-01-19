@@ -39,7 +39,7 @@ export default function Navbar() {
             <img src={siteLogo} alt="XM Coach Logo" className="h-[40px] w-auto" />
           </a>
         </div>
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 hidden lg:block">
           <a
             style={buttonStyles}
             href="https://calendly.com/david-hicks/delivery-logistics-after-party"
