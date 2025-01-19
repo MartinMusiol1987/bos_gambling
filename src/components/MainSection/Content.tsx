@@ -18,17 +18,22 @@ export default function Content() {
         We'll give you a snapshot of your potential litigation, safer gambling and regulatory vulnerabilities and risks. We'll also use this unprecedented collective data to create the best in breed framework of real time triggers for you to identify and mitigate these risks before they escalate.
       </p>
       <div className="flex mt-8">
-        <div className="w-1 bg-orange-400 mr-6"></div>
+        
         <div>
-          <blockquote 
-            className="text-4xl text-gray-700 mb-2"
-            style={{ fontFamily: "'DM Serif Text', serif" }}
-          >
-            "This is too important to leave to chance"
-            <cite className="block text-base text-gray-600 not-italic mt-4 font-bold">
-              - CX Lead major EU gaming business
-            </cite>
-          </blockquote>
+          <p className="font-['DM_Serif_Text'] text-[36px] italic font-normal leading-[40px] text-left text-[#ED6944]"
+             style={{ 
+               textUnderlinePosition: 'from-font',
+               textDecorationSkipInk: 'none'
+             }}>
+            "This is too important to leave<br />to chance"
+          </p>
+          <p className="font-['DM_Serif_Text'] text-[15.5px] italic font-normal leading-[24px] text-left text-[#4B5563] mt-2"
+             style={{ 
+               textUnderlinePosition: 'from-font',
+               textDecorationSkipInk: 'none'
+             }}>
+            - CX Lead major EU gaming business
+          </p>
         </div>
       </div>
       <div className="mt-8">

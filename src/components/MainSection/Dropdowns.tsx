@@ -62,11 +62,55 @@ const rowPdfMap = {
   cx: '/assets/pdfs/customer-experience.pdf'
 };
 
+interface DropdownProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export function MarketDropdown({ value, onChange }: DropdownProps) {
+  return (
+    <div style={containerStyles}>
+      <select 
+        style={dropdownStyles}
+        className="hover:border-orange-400 focus:border-orange-400 focus:outline-none"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="" disabled>Please select...</option>
+        <option value="us">US</option>
+        <option value="row">Rest of the World</option>
+      </select>
+      <div style={arrowStyles}></div>
+    </div>
+  );
+}
+
+export function RoleDropdown({ value, onChange }: DropdownProps) {
+  return (
+    <div style={containerStyles}>
+      <select 
+        style={dropdownStyles}
+        className="hover:border-orange-400 focus:border-orange-400 focus:outline-none"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="" disabled>Please select...</option>
+        <option value="regulatory">Regulatory Safer Gambling</option>
+        <option value="operations">Operations</option>
+        <option value="cx">Customer Experience</option>
+      </select>
+      <div style={arrowStyles}></div>
+    </div>
+  );
+}
+
 export default function Dropdowns() {
   const [market, setMarket] = useState('');
   const [role, setRole] = useState('');
 
   const handleDownload = () => {
+    if (!market || !role) return;
+    
     // For US market, always serve us-market.pdf regardless of role
     if (market === 'us') {
       window.open('/assets/pdfs/us-market.pdf', '_blank');
@@ -80,65 +124,48 @@ export default function Dropdowns() {
     }
   };
 
+  const isDisabled = !market || !role;
+
   return (
     <div className="flex flex-col items-center gap-8 mt-16">
       <div className="text-center">
         <label className="text-xl font-medium block text-gray-700">Which Market are you in?</label>
-        <div style={containerStyles}>
-          <select 
-            style={dropdownStyles}
-            className="hover:border-orange-400 focus:border-orange-400 focus:outline-none"
-            value={market}
-            onChange={(e) => setMarket(e.target.value)}
-          >
-            <option value="" disabled>Please select...</option>
-            <option value="us">US</option>
-            <option value="row">Rest of the World</option>
-          </select>
-          <div style={arrowStyles}></div>
-        </div>
+        <MarketDropdown value={market} onChange={setMarket} />
       </div>
 
       <div className="text-center">
         <label className="text-xl font-medium block text-gray-700">What role are you in?</label>
-        <div style={containerStyles}>
-          <select 
-            style={dropdownStyles}
-            className="hover:border-orange-400 focus:border-orange-400 focus:outline-none"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-          >
-            <option value="" disabled>Please select...</option>
-            <option value="regulatory">Regulatory Safer Gambling</option>
-            <option value="operations">Operations</option>
-            <option value="cx">Customer Experience</option>
-          </select>
-          <div style={arrowStyles}></div>
-        </div>
+        <RoleDropdown value={role} onChange={setRole} />
       </div>
 
-      {role && (
-        <div className="flex flex-col items-center gap-4">
-          <button
-            style={downloadButtonStyles}
-            className="hover:bg-[#e85933] active:bg-[#d54e2a]"
-            onClick={handleDownload}
-            aria-label="Download PDF in new tab"
+      <button
+        className={`mt-8 px-6 py-3 border-2 rounded-full flex items-center gap-2 w-[300px] justify-center transition-colors ${
+          isDisabled 
+            ? 'border-gray-300 text-gray-300 cursor-not-allowed' 
+            : 'border-[#333333] text-[#333333] hover:bg-gray-50 cursor-pointer'
+        }`}
+        onClick={handleDownload}
+        disabled={isDisabled}
+      >
+        Download PDF
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+      </button>
+      
+      {market && role && (
+        <div className="mt-8 text-center">
+          <p className="text-gray-700 mb-4">If you'd like to know more schedule a meeting</p>
+          <a
+            className="inline-block px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors mt-4"
+            href="https://calendly.com/david-hicks/xm-coach-initial-discussion-clone"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Download PDF
-          </button>
-          
-          <div className="mt-8 text-center">
-            <p className="text-gray-700 mb-4">If you'd like to know more schedule a meeting</p>
-            <a
-              className="inline-block px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors mt-4"
-              href="https://calendly.com/david-hicks/delivery-logistics-after-party"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Schedule a Call
-            </a>
-          </div>
+            Schedule a Call
+          </a>
         </div>
       )}
     </div>
