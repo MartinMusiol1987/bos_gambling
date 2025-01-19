@@ -68,7 +68,11 @@ export default function MainSection() {
                 if (!market || !role) return;
                 const pdfPath = market === 'us' 
                   ? '/assets/pdfs/us-market.pdf'
-                  : `/assets/pdfs/${role}.pdf`;
+                  : {
+                    regulatory: '/assets/pdfs/regulatory-safer-gambling.pdf',
+                    operations: '/assets/pdfs/operations.pdf',
+                    cx: '/assets/pdfs/customer-experience.pdf'
+                  }[role];
                 window.open(pdfPath, '_blank');
               }}
             >
@@ -132,7 +136,11 @@ export default function MainSection() {
                   if (!market || !role) return;
                   const pdfPath = market === 'us' 
                     ? '/assets/pdfs/us-market.pdf'
-                    : `/assets/pdfs/${role}.pdf`;
+                    : {
+                      regulatory: '/assets/pdfs/regulatory-safer-gambling.pdf',
+                      operations: '/assets/pdfs/operations.pdf',
+                      cx: '/assets/pdfs/customer-experience.pdf'
+                    }[role];
                   window.open(pdfPath, '_blank');
                 }}
               >
